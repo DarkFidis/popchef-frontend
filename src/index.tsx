@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import {App} from "./pages/App";
 
 const MainApp = () => {
   return (
     <>
-      <div> Hello World </div>
+      <App />
     </>
   )
 }
