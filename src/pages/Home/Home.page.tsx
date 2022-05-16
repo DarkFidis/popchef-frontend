@@ -1,12 +1,13 @@
 import React from "react";
-import {UserContainer} from "../../containers/UserContainer/UserContainer.component";
+import {MovieContainer} from "../../containers/MovieContainer/Movie.container";
+import {ApolloProvider} from "@apollo/client";
+import {client} from "../../graphql/client";
 
 export const Home: React.FC = () => {
   return (
-    <>
-      <div>Bienvenue sur une app React !</div>
-      <UserContainer />
-    </>
+    <ApolloProvider client={client}>
+      <MovieContainer />
+    </ApolloProvider>
   )
 }
 
