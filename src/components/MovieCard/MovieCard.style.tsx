@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {Link} from "react-router-dom";
 
 export const CardBody = styled.div`
   overflow: hidden;
@@ -32,4 +33,9 @@ export const CardImg = styled.img`
   height: 100%;
   width: 120px;
   object-fit: cover;
+`
+
+export const NeutralLink = styled(Link)`
+  text-decoration: none;
+  cursor: pointer;
 `

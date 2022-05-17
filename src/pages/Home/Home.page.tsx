@@ -1,9 +1,9 @@
 import React from "react";
-import {MovieContainer} from "../../containers/MovieContainer/Movie.container";
+import {MovieListContainer} from "../../containers/MovieListContainer/MovieList.container";
 
 export const Home: React.FC = () => {
   return (
-    <MovieContainer />
+    <MovieListContainer />
   )
 }
 

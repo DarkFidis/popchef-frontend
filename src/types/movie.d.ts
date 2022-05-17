@@ -1,5 +1,6 @@
 export type Movie = {
   description: string
+  id: number
   imgUrl: string
   length: string
   releaseYear: string

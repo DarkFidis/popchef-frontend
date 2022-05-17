@@ -1,23 +1,36 @@
 import React from "react";
-import {GET_MOVIES} from "../../graphql/queries/get-users.gql";
 import {useQuery} from "@apollo/client";
-import {MovieCard} from "../../components/MovieCard/MovieCard.component";
+import {GET_MOVIE} from "../../graphql/queries/get-movie-by-id.gql";
+import {MovieImg, MovieInfo, MovieInfoField, MovieInfoValue, MovieWrapper} from "./MovieContainer.style";
 
-export const MovieContainer: React.FC = () => {
-  const { loading, error, data } = useQuery(GET_MOVIES)
+export const MoviePres: React.FC<{id: string}> = ({id}) => {
+  const movieId = +id
+  const { loading, error, data } = useQuery(GET_MOVIE, { variables: {id: movieId} })
   return (
     <>
-      { error ? (
-        <p>Cannot fetch movies</p>
-      ): ''}
-      { !loading && !error && data && data.getMovies && (
-        <>
-          <h1>Films</h1>
-          {data.getMovies.map((movie: any, key: number) => (
-            <MovieCard movie={movie} key={key} />
-          ))}
-        </>
+      {!loading && !error && data && (
+        <MovieWrapper>
+          <MovieImg src={data.getMovieById.imgUrl} />
+          <MovieInfo>
+            <MovieInfoField>Titre</MovieInfoField>
+            <MovieInfoValue>{data.getMovieById.title}</MovieInfoValue>
+          </MovieInfo>
+          <MovieInfo>
+            <MovieInfoField>Sortie</MovieInfoField>
+            <MovieInfoValue>{data.getMovieById.releaseYear}</MovieInfoValue>
+          </MovieInfo>
+          <MovieInfo>
+            <MovieInfoField>Durée</MovieInfoField>
+            <MovieInfoValue>{data.getMovieById.length} minutes</MovieInfoValue>
+          </MovieInfo>
+          <MovieInfo>
+            <MovieInfoField>Description</MovieInfoField>
+            <MovieInfoValue>{data.getMovieById.description}</MovieInfoValue>
+          </MovieInfo>
+        </MovieWrapper>
       )}
     </>
   )
 }
+
+export default MoviePres
