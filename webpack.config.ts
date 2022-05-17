@@ -23,6 +23,7 @@ const port = Number(process.env.PORT) || 4000 // à cette étape, nous n'avons p
 export const config: Configuration = {
   devServer: { // Dans le cas où l'application React n'est pas servie par un serveur express, nous allons configurer webpack-dev-server
     compress: true,
+    historyApiFallback: true,
     hot: false, // Par défaut, nous considérons que l'environnement est "prod"...
     liveReload: false, // Donc nous n'activons pas le hot/live build and reload
     port, // Le port a été défini plus haut
