@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {Link} from "react-router-dom";
 
 export const CardBody = styled.div`
   overflow: hidden;
@@ -35,7 +34,25 @@ export const CardImg = styled.img`
   object-fit: cover;
 `
 
-export const NeutralLink = styled(Link)`
-  text-decoration: none;
-  cursor: pointer;
+export const CardButtons = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+`
+
+export const DeleteButton = styled.button`
+  background-color: #c0392b;
+  color: white;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  margin-top: 5px;
+`
+
+export const DisplayButton = styled.button`
+  background-color: #70a1ff;
+  color: white;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
 `

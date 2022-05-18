@@ -30,11 +30,3 @@ export const MovieInfoValue = styled.div`
   padding: 0 10px;
   width: 340px;
 `
-
-export const DeleteButton = styled.button`
-  background-color: #c0392b;
-  color: white;
-  width: 100px;
-  height: 50px;
-  border-radius: 10px;
-`

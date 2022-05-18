@@ -9,4 +9,5 @@ export type Movie = {
 
 export type MovieProps = {
   movie: Movie
+  deleteMovie: (id: number) => void
 }
